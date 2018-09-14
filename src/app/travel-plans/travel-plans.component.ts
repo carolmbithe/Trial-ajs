@@ -10,6 +10,12 @@ import { Travel } from '../travel'
 export class TravelPlansComponent implements OnInit {
 
   @Input() travel:Travel;
+  @Output()isDone=new EventEmitter<boolean>();
+
+  Travelled(done:boolean){
+  this.isDone.emit(done);
+
+}
   constructor() { }
 
   ngOnInit() {

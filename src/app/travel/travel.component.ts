@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { Travel } from '../travel'
 
 @Component({
@@ -15,7 +15,19 @@ export class TravelComponent implements OnInit {
   new Travel('Kwale',3,'Go to Gedi Ruins'),
   new Travel('Lamu',4,'Go snorkelling'),
 ]
-  constructor() {}
+
+Travelled(isDone,index){
+  if(isDone){
+    this.travels.splice(index,1);
+  }
+}
+
+toogle(index){
+        this.travels[index].showDescription = !this.travels[index].showDescription;
+
+    }
+
+    constructor() {}
 
   ngOnInit() {
   }

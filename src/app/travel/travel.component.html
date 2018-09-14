@@ -6,11 +6,11 @@
 <p> My plans for this month are</p>
  <ul>
 
-       <div class *ngFor='let travel of travels'>
+       <div class *ngFor='let travel of travels;let i=index'>
          <li>{{travel.destination}}</li>
-         <button (click)='toggle'>Toggle</button>
+         <button (click)='toogle(i)'>Toogle</button>
 
-        <app-travel-plans [travel]='travel'></app-travel-plans>
+        <app-travel-plans *ngIf="travel.showDescription" [travel]='travel' (isDone)='Travelled($event,i)'></app-travel-plans>
 
     </div>
 </ul>
