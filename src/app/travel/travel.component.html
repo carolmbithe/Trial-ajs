@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <h1> My Travel Plans </h1>
+<p> My plans for this month are</p>
+ <ul>
+
+       <div class *ngFor='let travel of travels'>
+         <li>{{travel.destination}}</li>
+         <button (click)='toggle'>Toggle</button>
+
+        <app-travel-plans [travel]='travel'></app-travel-plans>
+
+    </div>
+</ul>
+<p *ngIf='travels.length > 3'>You have too many plans</p>
+ <!-- <ng-template #new_else>hahaa</ng-template>  ;else new_else -->
+
+
+</div>
